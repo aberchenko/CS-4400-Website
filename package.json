@@ -1,0 +1,27 @@
+{
+  "name": "cs-4400-website",
+  "version": "1.0.0",
+  "description": "Phase 3 implementation for Atlanta Beltline project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aberchenko/CS-4400-Website.git"
+  },
+  "author": "Benjamin Holmes, Amiel Berchenko, William Collins, Lauren Chen, Linsey Chen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aberchenko/CS-4400-Website/issues"
+  },
+  "homepage": "https://github.com/aberchenko/CS-4400-Website#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.11"
+  },
+  "dependencies": {
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
+  }
+}
