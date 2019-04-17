@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en-US">     <!-- lang attribute optional -->
+  <head>
+    <title>Register Employee</title>
+    <meta charset="UTF-8">  <!-- Probably optional as well -->
+
+    <link rel="stylesheet" href="Styles.css">
+
+    <script>
+      var emails = ["person1@example.com", "person2@example.com", "person3@example.com"];
+
+      function back() {
+        document.location.href = "2_Register_Navigation.html";
+      }
+
+      function register() {
+        var fname = document.forms["myForm"]["fname"].value;
+        var lname = document.forms["myForm"]["lname"].value;
+        var username = document.forms["myForm"]["username"].value;
+        var userType = document.forms["myForm"]["type"].value;
+        var password1 = document.forms["myForm"]["password1"].value;
+        var password2 = document.forms["myForm"]["password2"].value;
+        if (password1 != password2) {
+          alert("Passwords must match");
+          return;
+        }
+        var phone = document.forms["myForm"]["phone"].value;
+        var address = document.forms["myForm"]["address"].value;
+        var city = document.forms["myForm"]["city"].value;
+        var state = document.forms["myForm"]["state"].value;
+        var zipcode = document.forms["myForm"]["zipcode"].value;
+        // emails are contained in the email array
+
+        //FIX ME
+        var added = true;
+
+        if (!added) {
+          alert("Issue registering");
+        } else {
+          //document.location.href = "";
+        }
+      }
+
+      function addEmail() {
+        /*var newEmail = document.forms["myForm"]["email"].value;
+        emails.push(newEmail);
+
+        var emailTable = document.getElementById("email-table");
+        //var rows = emailTable.rows;
+        //var firstRow = rows[0];
+        //var cells = firstRow.cells;
+        var newRow = emailTable.insertRow(emailTable.rows.length-1);
+        var cell0 = newRow.insertCell(0);
+        var cell1 = newRow.insertCell(1);
+        var cell2 = newRow.insertCell(2);
+        cell0.innerHTML = "";
+        cell1.innerHTML = newEmail;
+        cell2.innerHTML = "<button class='table-button'>Remove</button>"*/
+      }
+
+      function removeEmail(index) {
+        emails.splice(index, 1);
+        
+        var emailTable = document.getElementById("email-table");
+        emailTable.deleteRow(index);
+      }
+    </script>
+  </head>
+  <body>
+
+      <h1>Register Employee</h1>
+
+      <form name="myForm">
+        <table>
+          <tr>
+            <td>First Name</td>
+            <td><input type="text" name="fname"></td>
+            <td>Last Name</td>
+            <td><input type="text" name="lname"></td>
+          </tr>
+          <tr>
+            <td>Username</td>
+            <td><input type="text" name="username"></td>
+            <td>User Type</td>
+            <td>
+              <select name="type">
+                <option value="Manager">Manager</option>
+                <option value="Staff">Staff</option>
+              </select> 
+            </td>
+          </tr>
+          <tr>
+            <td>Password</td>
+            <td><input type="password" name="password1"></td>
+            <td>Confirm Password</td>
+            <td><input type="password" name="password2"></td>
+          </tr>
+          <tr>
+            <td>Phone</td>
+            <td><input type="text" name="phone"></td>
+            <td>Address</td>
+            <td><input type="text" name="address"></td>
+          </tr>
+          <tr>
+            <td>City</td>
+            <td><input type="text" name="city"></td>
+            <td>State</td>
+            <td>
+              <select name="state">
+                <option value="AL">AL</option>
+                <option value="AK">AK</option>
+                <option value="AZ">AZ</option>
+                <option value="AR">AR</option>
+                <option value="CA">CA</option>
+                <option value="CO">CO</option>
+                <option value="CT">CT</option>
+                <option value="DE">DE</option>
+                <option value="FL">FL</option>
+                <option value="GA">GA</option>
+                <option value="HI">HI</option>
+                <option value="ID">ID</option>
+                <option value="IL">IL</option>
+                <option value="IN">IN</option>
+                <option value="IA">IA</option>
+                <option value="KS">KS</option>
+                <option value="KY">KY</option>
+                <option value="LA">LA</option>
+                <option value="ME">ME</option>
+                <option value="MD">MD</option>
+                <option value="MA">MA</option>
+                <option value="MI">MI</option>
+                <option value="MN">MN</option>
+                <option value="MS">MS</option>
+                <option value="MO">MO</option>
+                <option value="MT">MT</option>
+                <option value="NE">NE</option>
+                <option value="NV">NV</option>
+                <option value="NH">NH</option>
+                <option value="NJ">NJ</option>
+                <option value="NM">NM</option>
+                <option value="NY">NY</option>
+                <option value="NC">NC</option>
+                <option value="ND">ND</option>
+                <option value="OH">OH</option>
+                <option value="OK">OK</option>
+                <option value="OR">OR</option>
+                <option value="PA">PA</option>
+                <option value="RI">RI</option>
+                <option value="SC">SC</option>
+                <option value="SD">SD</option>
+                <option value="TN">TN</option>
+                <option value="TX">TX</option>
+                <option value="UT">UT</option>
+                <option value="VT">VT</option>
+                <option value="VA">VA</option>
+                <option value="WA">WA</option>
+                <option value="WV">WV</option>
+                <option value="WI">WI</option>
+                <option value="WY">WY</option>
+              </select> 
+            </td>
+            <td>Zipcode</td>
+            <td><input type="text" name="zipcode"></td>
+          </tr>
+        </table>
+
+        <table id="email-table">
+          <tr>
+            <td>Email</td>
+            <td>person@example.com</td>
+            <td><button class="table-button" onclick="removeEmail(0)">Remove</button></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>person2@example.com</td>
+            <td><button class="table-button" onclick="removeEmail(1)">Remove</button></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>person3@example.com</td>
+            <td><button class="table-button" onclick="removeEmail(1)">Remove</button></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="text" name="email"></td>
+            <td><button class="table-button" onclick="addEmail()">Add</button></td>
+          </tr>
+        </table>
+      </form>
+  
+      <button class="general-button" onclick="back()">Back</button>
+      <button class="general-button" onclick="register()">Register</button>
+
+  </body>
+</html> 

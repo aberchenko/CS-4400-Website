@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">     <!-- lang attribute optional -->
+  <head>
+    <title>Register Navigation</title>
+    <meta charset="UTF-8">  <!-- Probably optional as well -->
+
+    <link rel="stylesheet" href="Styles.css">
+
+    <script>
+      function user() {
+        document.location.href = "3_Register_User.html";
+      }
+
+      function visitor() {
+        document.location.href = "4_Register_Visitor.html";
+      }
+
+      function employee() {
+        document.location.href = "5_Register_Employee.html";
+      }
+
+      function employeeVisitor() {
+        document.location.href = "6_Register_Employee_Visitor.html";
+      }
+
+      function back() {
+        document.location.href = "1_User_Login.html";
+      }
+    </script>
+  </head>
+  <body>
+
+    <h1>Register Navigation</h1>
+
+    <button class="general-button" onclick="user()">User Only</button><br>
+    <button class="general-button" onclick="visitor()">Visitor Only</button><br>
+    <button class="general-button" onclick="employee()">Employee Only</button><br>
+    <button class="general-button" onclick="employeeVisitor()">Employee-Visitor</button><br>
+    <button class="general-button" onclick="back()">Back</button><br>
+
+  </body>
+</html> 

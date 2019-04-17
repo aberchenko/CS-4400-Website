@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-US">     <!-- lang attribute optional -->
+  <head>
+    <title>Register Visitor</title>
+    <meta charset="UTF-8">  <!-- Probably optional as well -->
+
+    <link rel="stylesheet" href="Styles.css">
+
+    <script>
+      var emails = ["person1@example.com", "person2@example.com", "person3@example.com"];
+
+      function back() {
+        document.location.href = "2_Register_Navigation.html";
+      }
+
+      function register() {
+        var fname = document.forms["myForm"]["fname"].value;
+        var lname = document.forms["myForm"]["lname"].value;
+        var username = document.forms["myForm"]["username"].value;
+        var password1 = document.forms["myForm"]["password1"].value;
+        var password2 = document.forms["myForm"]["password2"].value;
+        if (password1 != password2) {
+          alert("Passwords must match");
+          return;
+        }
+        // emails are contained in the email array
+
+        //FIX ME
+        var added = true;
+
+        if (!added) {
+          alert("Issue registering");
+        } else {
+          //document.location.href = "";
+        }
+      }
+
+      function addEmail() {
+        /*var newEmail = document.forms["myForm"]["email"].value;
+        emails.push(newEmail);
+
+        var emailTable = document.getElementById("email-table");
+        //var rows = emailTable.rows;
+        //var firstRow = rows[0];
+        //var cells = firstRow.cells;
+        var newRow = emailTable.insertRow(emailTable.rows.length-1);
+        var cell0 = newRow.insertCell(0);
+        var cell1 = newRow.insertCell(1);
+        var cell2 = newRow.insertCell(2);
+        cell0.innerHTML = "";
+        cell1.innerHTML = newEmail;
+        cell2.innerHTML = "<button class='table-button'>Remove</button>"*/
+      }
+
+      function removeEmail(index) {
+        emails.splice(index, 1);
+        
+        var emailTable = document.getElementById("email-table");
+        emailTable.deleteRow(index);
+      }
+    </script>
+  </head>
+  <body>
+
+      <h1>Register Visitor</h1>
+
+      <form name="myForm">
+        <table>
+          <tr>
+            <td>First Name</td>
+            <td><input type="text" name="fname"></td>
+            <td>Last Name</td>
+            <td><input type="text" name="lname"></td>
+          </tr>
+          <tr>
+            <td>Username</td>
+            <td><input type="text" name="username"></td>
+          </tr>
+          <tr>
+            <td>Password</td>
+            <td><input type="password" name="password1"></td>
+            <td>Confirm Password</td>
+            <td><input type="password" name="password2"></td>
+          </tr>
+        </table>
+
+        <table id="email-table">
+          <tr>
+            <td>Email</td>
+            <td>person@example.com</td>
+            <td><button class="table-button" onclick="removeEmail(0)">Remove</button></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>person2@example.com</td>
+            <td><button class="table-button" onclick="removeEmail(1)">Remove</button></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>person3@example.com</td>
+            <td><button class="table-button" onclick="removeEmail(1)">Remove</button></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="text" name="email"></td>
+            <td><button class="table-button" onclick="addEmail()">Add</button></td>
+          </tr>
+        </table>
+      </form>
+  
+      <button class="general-button" onclick="back()">Back</button>
+      <button class="general-button" onclick="register()">Register</button>
+
+  </body>
+</html> 
