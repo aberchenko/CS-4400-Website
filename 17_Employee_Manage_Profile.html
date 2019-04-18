@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-US">     <!-- lang attribute optional -->
+  <head>
+    <title>Manage Profile</title>
+    <meta charset="UTF-8">  <!-- Probably optional as well -->
+
+    <link rel="stylesheet" href="Styles.css">
+
+    <script>
+      var emails = ["person1@example.com", "person2@example.com", "person3@example.com"];
+
+      function back() {
+        document.location.href = "2_Register_Navigation.html";
+      }
+
+      function update() {
+        var fname = document.forms["myForm"]["fname"].value;
+        var lname = document.forms["myForm"]["lname"].value;
+        var phone = document.forms["myForm"]["phone"].value;
+        // emails are contained in the email array
+
+        //FIX ME
+        var added = true;
+
+        if (!added) {
+          alert("Issue updating");
+        } else {
+          //document.location.href = "";
+        }
+      }
+
+      function addEmail() {
+        var newEmail = document.forms["myForm"]["email"].value;
+        emails.push(newEmail);
+        document.forms["myForm"]["email"].value = "";
+
+        var emailTable = document.getElementById("email-table");
+        //var rows = emailTable.rows;
+        //var firstRow = rows[0];
+        //var cells = firstRow.cells;
+        var index = emailTable.rows.length-1;
+        var newRow = emailTable.insertRow(index);
+        var cell0 = newRow.insertCell(0);
+        var cell1 = newRow.insertCell(1);
+        var cell2 = newRow.insertCell(2);
+        cell0.innerHTML = index == 0 ? "Email" : "";
+        cell1.innerHTML = newEmail;
+        cell2.innerHTML = "<button class='table-button' type='button' onclick='removeEmail(" + index + ")'>Remove</button>"
+
+        if (index == 0) {
+          emailTable.rows[1].cells[0].innerHTML = "";
+        }
+
+        return false;
+      }
+
+      function removeEmail(index) {
+        emails.splice(index, 1);
+        
+        var emailTable = document.getElementById("email-table");
+        emailTable.deleteRow(index);
+
+        for (var i = 0; i < emailTable.rows.length-1; i++) {
+          emailTable.rows[i].cells[2].innerHTML = "<button class='table-button' type='button' onclick='removeEmail(" + i + ")'>Remove</button>"
+        }
+
+        if (index == 0) {
+          var cell0 = emailTable.rows[0].cells[0];
+          cell0.innerHTML = "Email";
+        }
+
+        return false;
+      }
+    </script>
+  </head>
+  <body>
+
+      <h1>Manage Profile</h1>
+
+      <form name="myForm">
+        <table>
+          <tr>
+            <td>First Name</td>
+            <td><input type="text" name="fname" value="fname"></td>
+            <td>Last Name</td>
+            <td><input type="text" name="lname" value="lname"></td>
+          </tr>
+          <tr>
+            <td>Username</td>
+            <td class="data-text">username</td>
+            <td>Site Name</td>
+            <td class="data-text">site</td>
+          </tr>
+          <tr>
+            <td>Employee ID</td>
+            <td class="data-text">123456789</td>
+            <td>Phone</td>
+            <td><input type="text" name="phone" value="123-456-7890"></td>
+          </tr>
+        </table>
+        <p style="margin-left: 25px;">
+        Address <span style="margin-left: 25px;" class="data-text">the address (which could be long)</span>
+        </p>
+
+        <table id="email-table">
+          <tr>
+            <td>Email</td>
+            <td>email1@email1.com</td>
+            <td><button class="table-button" type="button" onclick="removeEmail(0)">Remove</button></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="text" name="email"></td>
+            <td><button class="table-button" type="button" onclick="addEmail()">Add</button></td>
+          </tr>
+        </table>
+      </form>
+  
+      <button class="general-button" onclick="update()">Update</button>
+      <button class="general-button" onclick="back()">Back</button>
+
+  </body>
+</html> 
