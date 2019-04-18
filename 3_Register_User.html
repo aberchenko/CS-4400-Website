@@ -36,20 +36,28 @@
       }
 
       function addEmail() {
-        /*var newEmail = document.forms["myForm"]["email"].value;
+        var newEmail = document.forms["myForm"]["email"].value;
         emails.push(newEmail);
+        document.forms["myForm"]["email"].value = "";
 
         var emailTable = document.getElementById("email-table");
         //var rows = emailTable.rows;
         //var firstRow = rows[0];
         //var cells = firstRow.cells;
-        var newRow = emailTable.insertRow(emailTable.rows.length-1);
+        var index = emailTable.rows.length-1;
+        var newRow = emailTable.insertRow(index);
         var cell0 = newRow.insertCell(0);
         var cell1 = newRow.insertCell(1);
         var cell2 = newRow.insertCell(2);
-        cell0.innerHTML = "";
+        cell0.innerHTML = index == 0 ? "Email" : "";
         cell1.innerHTML = newEmail;
-        cell2.innerHTML = "<button class='table-button'>Remove</button>"*/
+        cell2.innerHTML = "<button class='table-button' type='button' onclick='removeEmail(" + index + ")'>Remove</button>"
+
+        if (index == 0) {
+          emailTable.rows[1].cells[0].innerHTML = "";
+        }
+
+        return false;
       }
 
       function removeEmail(index) {
@@ -57,6 +65,17 @@
         
         var emailTable = document.getElementById("email-table");
         emailTable.deleteRow(index);
+
+        for (var i = 0; i < emailTable.rows.length-1; i++) {
+          emailTable.rows[i].cells[2].innerHTML = "<button class='table-button' type='button' onclick='removeEmail(" + i + ")'>Remove</button>"
+        }
+
+        if (index == 0) {
+          var cell0 = emailTable.rows[0].cells[0];
+          cell0.innerHTML = "Email";
+        }
+
+        return false;
       }
     </script>
   </head>
@@ -87,23 +106,8 @@
         <table id="email-table">
           <tr>
             <td>Email</td>
-            <td>person@example.com</td>
-            <td><button class="table-button" onclick="removeEmail(0)">Remove</button></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td>person2@example.com</td>
-            <td><button class="table-button" onclick="removeEmail(1)">Remove</button></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td>person3@example.com</td>
-            <td><button class="table-button" onclick="removeEmail(1)">Remove</button></td>
-          </tr>
-          <tr>
-            <td></td>
             <td><input type="text" name="email"></td>
-            <td><button class="table-button" onclick="addEmail()">Add</button></td>
+            <td><button class="table-button" type="button" onclick="addEmail()">Add</button></td>
           </tr>
         </table>
       </form>

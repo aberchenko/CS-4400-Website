@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">     <!-- lang attribute optional -->
+  <head>
+    <title>Transit History</title>
+    <meta charset="UTF-8">  <!-- Probably optional as well -->
+
+    <link rel="stylesheet" href="Styles.css">
+
+    <script>
+      function filter() {
+
+      }
+
+      function back() {
+        
+      }
+
+      function log() {
+
+      }
+
+      function transportUp() {
+
+      }
+
+      function transportDown() {
+
+      }
+
+      function priceUp() {
+
+      }
+
+      function priceDown() {
+
+      }
+
+      function dateDown() {
+
+      }
+
+      function dateUp() {
+        
+      }
+
+      function routeDown() {
+
+      }
+
+      function routeUp() {
+        
+      }
+    </script>
+  </head>
+  <body>
+
+      <h1>Transit History</h1>
+
+      <form name="myForm">
+        Transport Type
+        <select name="transport" style="margin-left:20px; margin-right: 20px;">
+          <option value="ALL">ALL</option>
+          <option value="MARTA">MARTA</option>
+          <option value="Bus">Bus</option>
+          <option value="Bike">Bike</option>
+        </select>
+        Contain Site
+        <select name="site" style="margin-left:20px; margin-right: 20px;">
+          <option value="Site 1">Site 1</option>
+          <option value="Site 2">Site 2</option>
+        </select>
+
+        <br>
+        <br>
+        Route
+        <input type="text" name="route" style="margin-left:20px; margin-right: 20px;">
+        Start Date
+        <input type="text" name="startDate" style="margin-left:20px; margin-right: 20px;">
+        End Date
+        <input type="text" name="endDate" style="margin-left:20px; margin-right: 20px;">
+        <br>
+        <br>
+
+        <button class="general-button" style="margin-left: 150px;" onclick="filter()">Filter</button>
+        <br>
+        <br>
+
+        <table id="email-table" class="border-table">
+          <tr class="border-table">
+            <th class="border-table">Date
+              <div class="sort-buttons">
+                <div class="triangle-up" onclick="dateUp()"></div>
+                <div class="triangle-down" onclick="dateDown()"></div>
+              </div>
+            </th>
+            <th class="border-table">Route
+              <div class="sort-buttons">
+                <div class="triangle-up" onclick="routeUp()"></div>
+                <div class="triangle-down" onclick="routeDown()"></div>
+              </div>
+            </th>
+            <th class="border-table">Transport Type
+              <div class="sort-buttons">
+                <div class="triangle-up" onclick="transportUp()"></div>
+                <div class="triangle-down" onclick="transportDown()"></div>
+              </div>
+            </th>
+            <th class="border-table">Price
+              <div class="sort-buttons">
+                <div class="triangle-up" onclick="priceUp()"></div>
+                <div class="triangle-down" onclick="priceDown()"></div>
+              </div>
+            </th>
+          </tr>
+          <tr class="border-table">
+            <td class="border-table">2019-02-01</td>
+            <td class="border-table">816</td>
+            <td class="border-table">Bus</td>
+            <td class="border-table">2.5</td>
+          </tr>
+          <tr class="border-table">
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+          </tr>
+          <tr class="border-table">
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+          </tr>
+          <tr class="border-table">
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+          </tr>
+          <tr class="border-table">
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+          </tr>
+        </table>
+
+        <button class="general-button" onclick="back()" style="margin-left: 150px;">Back</button>
+      </form>
+
+  </body>
+</html> 
