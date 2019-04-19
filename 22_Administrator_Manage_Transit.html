@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-US">     <!-- lang attribute optional -->
+  <head>
+    <title>Manage Transit</title>
+    <meta charset="UTF-8">  <!-- Probably optional as well -->
+
+    <link rel="stylesheet" href="Styles.css">
+
+    <script>
+      function filter() {
+
+      }
+
+      function back() {
+        
+      }
+
+      function create() {
+
+      }
+
+      function edit() {
+
+      }
+
+      function del() {
+
+      }
+
+      function transportUp() {
+
+      }
+
+      function transportDown() {
+
+      }
+
+      function priceUp() {
+
+      }
+
+      function priceDown() {
+
+      }
+
+      function dateDown() {
+
+      }
+
+      function dateUp() {
+        
+      }
+
+      function routeDown() {
+
+      }
+
+      function routeUp() {
+        
+      }
+    </script>
+  </head>
+  <body>
+
+      <h1>Manage Transit</h1>
+
+      <form name="myForm">
+        <table>
+          <tr>
+            <td>Transport Type</td>
+            <td>
+              <select name="transport">
+                <option value="ALL">ALL</option>
+                <option value="MARTA">MARTA</option>
+                <option value="Bus">Bus</option>
+                <option value="Bike">Bike</option>
+              </select>
+            </td>
+            <td>Route</td>
+            <td><input type="text" name="route"></td>
+          </tr>
+          <tr>
+            <td>Contain Site</td>
+            <td>
+              <select name="site">
+                <option value="Site 1">Site 1</option>
+                <option value="Site 2">Site 2</option>
+              </select>
+            </td>
+            <td>Price Range</td>
+            <td><input type="text" name="lowPrice"> -- <input type="text" name="highPrice"></td>
+          </tr>
+        </table>
+
+        <button class="general-button" style="margin-left: 50px;" onclick="filter()">Filter</button>
+        <button class="general-button" style="margin-left: 100px;" onclick="create()">Create</button>
+        <button class="general-button" onclick="edit()">Edit</button>
+        <button class="general-button" onclick="del()">Delete</button>
+        <br>
+        <br>
+
+        <table id="email-table" class="border-table">
+            <th class="border-table">Route</th>
+            <th class="border-table">Transport Type
+              <div class="sort-buttons">
+                <div class="triangle-up" onclick="transportUp()"></div>
+                <div class="triangle-down" onclick="transportDown()"></div>
+              </div>
+            </th>
+            <th class="border-table">Price
+              <div class="sort-buttons">
+                <div class="triangle-up" onclick="priceUp()"></div>
+                <div class="triangle-down" onclick="priceDown()"></div>
+              </div>
+            </th>
+            <th class="border-table"># Connected Sites</th>
+            <th class="border-table"># Transit Logged</th>
+          </tr>
+          <tr class="border-table">
+            <td class="border-table"><input type="radio" name="route" value="816"> 816</td>
+            <td class="border-table">Bus</td>
+            <td class="border-table">2.5</td>
+            <td class="border-table">4</td>
+            <td class="border-table">1</td>
+          </tr>
+          <tr class="border-table">
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+          </tr>
+          <tr class="border-table">
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+          </tr>
+          <tr class="border-table">
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+          </tr>
+          <tr class="border-table">
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+          </tr>
+        </table>
+
+        <button class="general-button" onclick="back()" style="margin-left: 150px;">Back</button>
+      </form>
+
+  </body>
+</html> 

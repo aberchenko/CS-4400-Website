@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">     <!-- lang attribute optional -->
+  <head>
+    <title>Create Transit</title>
+    <meta charset="UTF-8">  <!-- Probably optional as well -->
+
+    <link rel="stylesheet" href="Styles.css">
+
+    <script>
+      function update() {
+
+      }
+
+      function back() {
+        
+      }
+    </script>
+  </head>
+  <body>
+
+      <h1>Create Transit</h1>
+
+      <form name="myForm">
+        <table>
+          <tr>
+            <td>Transport Type</td>
+            <td>
+              <select name="transport">
+                <option value="MARTA">MARTA</option>
+                <option value="Bus">Bus</option>
+                <option value="Bike">Bike</option>
+              </select>
+            </td>
+            <td>Route</td>
+            <td><input type="text" name="route"></td>
+            <td>Price ($)</td>
+            <td><input type="text" name="price"></td>
+          </tr>
+        </table>
+
+        <br>
+
+        <div style="margin-left:25px;">
+          <div style="float: left;">Connected Sites</div>
+          <select name="sites" size="8" multiple style="margin-left: 50px; padding-right: 100px;">
+            <!-- Example data -->
+            <option value="site1">Site 1</option>
+            <option value="site2">Site 2</option>
+            <option value="site3">Site 3</option>
+          </select> 
+        </div>
+
+        <button class="general-button" onclick="back()" style="margin-left: 50px;">Back</button>
+        <button class="general-button" onclick="update()" style="margin-left: 50px;">Update</button>
+      </form>
+
+  </body>
+</html> 
