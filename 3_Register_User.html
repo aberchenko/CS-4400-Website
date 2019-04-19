@@ -35,8 +35,17 @@
         }
       }
 
+      function validateEmail(email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+      }
+
       function addEmail() {
-        var newEmail = document.forms["myForm"]["email"].value;
+        var newEmail = document.getElementById("email").value;
+        if (!validateEmail(newEmail)) {
+          alert("Invalid email");
+          return;
+        }
         emails.push(newEmail);
         document.forms["myForm"]["email"].value = "";
 
@@ -50,7 +59,7 @@
         var cell1 = newRow.insertCell(1);
         var cell2 = newRow.insertCell(2);
         cell0.innerHTML = index == 0 ? "Email" : "";
-        cell1.innerHTML = newEmail;
+        cell1.innerHTML = "<p name='email" + index + "'>" + newEmail + "<p>";
         cell2.innerHTML = "<button class='table-button' type='button' onclick='removeEmail(" + index + ")'>Remove</button>"
 
         if (index == 0) {
@@ -106,7 +115,7 @@
         <table id="email-table">
           <tr>
             <td>Email</td>
-            <td><input type="email" name="email"></td>
+            <td><input type="email" id="email"></td>
             <td><button class="table-button" type="button" onclick="addEmail()">Add</button></td>
           </tr>
         </table>
