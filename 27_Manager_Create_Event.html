@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">     <!-- lang attribute optional -->
+  <head>
+    <title>Create Event</title>
+    <meta charset="UTF-8">  <!-- Probably optional as well -->
+
+    <link rel="stylesheet" href="Styles.css">
+  </head>
+  <body>
+
+      <h1>Create Event</h1>
+
+      <!-- Example Data -->
+      <form name="myForm">
+        <table>
+          <tr>
+            <td>Name</td>
+            <td><input type="text" name="name"></td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>$ <input type="text" name="price"></td>
+            <td>Capacity</td>
+            <td><input type="text" name="capacity"></td>
+            <td>Minimum Staff Required</td>
+            <td><input type="text" name="staff"></td>
+          </tr>
+          <tr>
+            <td>Start Date</td>
+            <td><input type="date" name="startDate"></td>
+            <td>End Date</td>
+            <td><input type="date" name="endDate"></td>
+          </tr>
+        </table>
+
+        <br>
+
+        <table>
+          <tr>
+            <td>Description</td>
+            <td>
+              <textarea name="description" rows="8" style="width:200px;"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>Assign Staff</td>
+            <td>
+              <select name="staff" size="8" multiple style="width:200px;">
+                <!-- Example data -->
+                <option value="staff1">Staff 1</option>
+                <option value="staff2">Staff 2</option>
+                <option value="staff3">Staff 3</option>
+              </select> 
+            </td>
+          </tr>
+        </table>
+
+        <button class="general-button">Back</button>
+        <button class="general-button" style="margin-left: 200px;">Create</button>
+      </form>
+
+  </body>
+</html> 

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-US">     <!-- lang attribute optional -->
+  <head>
+    <title>View/Edit Event</title>
+    <meta charset="UTF-8">  <!-- Probably optional as well -->
+
+    <link rel="stylesheet" href="Styles.css">
+  </head>
+  <body>
+
+      <h1>View/Edit Event</h1>
+
+      <!-- Example Data -->
+      <form name="myForm">
+        <table>
+          <tr>
+            <td>Name</td>
+            <td class="data-text">Bus Tour</td>
+            <td>Price ($)</td>
+            <td class="data-text">25</td>
+          </tr>
+          <tr>
+            <td>Start Date</td>
+            <td class="data-text">2019-02-01</td>
+            <td>End Date</td>
+            <td class="data-text">2019-02-01</td>
+          </tr>
+          <tr>
+            <td>Minimum Staff Required</td>
+            <td class="data-text">4</td>
+            <td>Capacity</td>
+            <td class="data-text">100</td>
+          </tr>
+        </table>
+
+        <br>
+
+        <table>
+          <tr>
+            <td>Staff Assigned</td>
+            <td>
+              <select name="staff" size="8" multiple style="width:200px;">
+                <!-- Example data -->
+                <option value="staff1">Staff 1</option>
+                <option value="staff2">Staff 2</option>
+                <option value="staff3">Staff 3</option>
+              </select> 
+            </td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>
+              <textarea name="description" rows="8" style="width:200px;"></textarea>
+            </td>
+          </tr>
+        </table>
+
+        <p>
+          Daily Visits Range
+          <input type="text" name="visitsLow" style="width: 50px;"> -- <input type="text" name="visitsHigh" style="width: 50px; margin-right: 50px;">
+          Daily Revenue Range
+          <input type="text" name="revenueLow" style="width: 50px;"> -- <input type="text" name="revenueHigh" style="width: 50px;">
+        </p>
+
+        <button class="general-button">Filter</button>
+        <button class="general-button" style="margin-left: 200px;">Update</button>
+        <br>
+        <br>
+
+        <table id="email-table" class="border-table">
+            <th class="border-table">Date
+              <div class="sort-buttons">
+                <div class="triangle-up"></div>
+                <div class="triangle-down"></div>
+              </div>
+            </th>
+            <th class="border-table">Daily Visits
+              <div class="sort-buttons">
+                <div class="triangle-up"></div>
+                <div class="triangle-down"></div>
+              </div>
+            </th>
+            <th class="border-table">Daily Revenue ($)
+              <div class="sort-buttons">
+                <div class="triangle-up"></div>
+                <div class="triangle-down"></div>
+              </div>
+            </th>
+          </tr>
+          <!-- Example Data -->
+          <tr class="border-table">
+            <td class="border-table">2019-02-01</td>
+            <td class="border-table">80</td>
+            <td class="border-table">2000</td>
+          </tr>
+          <tr class="border-table">
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+          </tr>
+          <tr class="border-table">
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+          </tr>
+          <tr class="border-table">
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+          </tr>
+          <tr class="border-table">
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+          </tr>
+        </table>
+
+        <button class="general-button" style="margin-left: 150px;">Back</button>
+      </form>
+
+  </body>
+</html> 
