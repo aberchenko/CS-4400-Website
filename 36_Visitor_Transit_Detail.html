@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-US">     <!-- lang attribute optional -->
+  <head>
+    <title>Transit Detail</title>
+    <meta charset="UTF-8">  <!-- Probably optional as well -->
+
+    <link rel="stylesheet" href="Styles.css">
+  </head>
+  <body>
+
+      <h1>Transit Detail</h1>
+
+      <form name="myForm">
+        <table>
+          <tr>
+            <td>Site</td>
+            <!-- Example Data -->
+            <td class="data-text" style="text-decoration: underline">Inman Park</td>
+            <td>Transport Type</td>
+            <td>
+              <select name="transport">
+                <option value="ALL">ALL</option>
+                <option value="MARTA">MARTA</option>
+                <option value="Bus">Bus</option>
+                <option value="Bike">Bike</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+
+        <table id="email-table" class="border-table">
+            <th class="border-table">Route</th>
+            <th class="border-table">Transport Type
+              <div class="sort-buttons">
+                <div class="triangle-up"></div>
+                <div class="triangle-down"></div>
+              </div>
+            </th>
+            <th class="border-table">Price
+              <div class="sort-buttons">
+                <div class="triangle-up"></div>
+                <div class="triangle-down"></div>
+              </div>
+            </th>
+            <th class="border-table"># Connected Sites
+              <div class="sort-buttons">
+                <div class="triangle-up"></div>
+                <div class="triangle-down"></div>
+              </div>
+            </th>
+          </tr>
+          <tr class="border-table">
+            <td class="border-table"><input type="radio" name="route" value="Blue"> Blue</td>
+            <td class="border-table">MARTA</td>
+            <td class="border-table">2.5</td>
+            <td class="border-table">5</td>
+          </tr>
+          <tr class="border-table">
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+          </tr>
+          <tr class="border-table">
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+          </tr>
+          <tr class="border-table">
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+          </tr>
+          <tr class="border-table">
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+            <td class="border-table"></td>
+          </tr>
+        </table>
+
+        <button class="general-button">Back</button>
+        Transit Date
+        <input type="date" name="date">
+        <button class="general-button">Log Transit</button>
+      </form>
+
+  </body>
+</html> 
